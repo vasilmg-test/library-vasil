@@ -7,7 +7,6 @@ import { logout as apiLogout } from './api/api.js';
 
 
 
-
 import { loginPage } from './views/login.js';
 import { registerPage } from './views/register.js';
 import { createPage } from './views/create.js';
