@@ -26,3 +26,12 @@ jobs:
     - run: npm run start
     - run: npm run server-start
     - run: npm test
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{secrets.SERVICE_ID_LIBRARY}}
+          api-key: ${{secrets.RENDER_API_TOKEN}}
